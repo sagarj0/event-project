@@ -98,7 +98,7 @@ export function WhyChooseKOISection() {
 
                 {/* Icon */}
                 <div className={`inline-flex p-4 bg-linear-to-br ${reason.color} rounded-xl mb-4 shadow-lg`}>
-                  <reason.icon className="w-8 h-8 text-white" />
+                  <reason.icon className="w-8 h-8" />
                 </div>
 
                 {/* Content */}
@@ -125,7 +125,7 @@ export function WhyChooseKOISection() {
           <p className="text-lg text-muted-foreground mb-6">Ready to join our vibrant community?</p>
           <div className="inline-flex gap-4">
             <button
-              className="px-8 py-4 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all"
+              className="px-8 py-4  font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all"
               style={{ backgroundImage: 'var(--gradient-bg)' }}
             >
               Learn More

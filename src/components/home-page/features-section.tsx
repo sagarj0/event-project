@@ -119,7 +119,7 @@ export function FeaturesSection() {
                 <div
                   className={`shrink-0 w-14 h-14 bg-linear-to-br ${feature.gradient} rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform`}
                 >
-                  <feature.icon className="w-7 h-7 text-white" />
+                  <feature.icon className="w-7 h-7 " />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-card-foreground mb-2">{feature.title}</h3>
@@ -145,7 +145,7 @@ export function FeaturesSection() {
               <div
                 className={`inline-flex w-16 h-16 bg-linear-to-br ${feature.gradient} rounded-2xl items-center justify-center shadow-lg mb-4 group-hover:scale-110 transition-transform`}
               >
-                <feature.icon className="w-8 h-8 text-white" />
+                <feature.icon className="w-8 h-8 " />
               </div>
               <h3 className="text-xl font-bold text-card-foreground mb-3">{feature.title}</h3>
               <p className="text-muted-foreground">{feature.description}</p>

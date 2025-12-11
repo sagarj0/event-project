@@ -115,7 +115,7 @@ export function TestimonialsSection() {
 
                 {/* Avatar */}
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-14 h-14 bg-linear-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                  <div className="w-14 h-14 bg-linear-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center  font-bold text-lg shadow-lg">
                     {testimonial.image}
                   </div>
                   <div>
