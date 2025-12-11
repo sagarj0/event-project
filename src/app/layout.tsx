@@ -20,7 +20,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Navbar />
-          <main className="flex flex-col items-stretch gap-4 overflow-y-auto container-wrapper">{children}</main>
+          <main className="flex flex-col items-stretch gap-4 overflow-y-auto">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>

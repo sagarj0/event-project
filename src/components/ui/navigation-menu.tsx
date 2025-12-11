@@ -38,7 +38,11 @@ function NavigationMenuList({ className, ...props }: React.ComponentProps<typeof
 
 function NavigationMenuItem({ className, ...props }: React.ComponentProps<typeof NavigationMenuPrimitive.Item>) {
   return (
-    <NavigationMenuPrimitive.Item data-slot="navigation-menu-item" className={cn('relative', className)} {...props} />
+    <NavigationMenuPrimitive.Item
+      data-slot="navigation-menu-item text-secondary"
+      className={cn('relative', className)}
+      {...props}
+    />
   );
 }
 

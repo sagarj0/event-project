@@ -127,7 +127,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Section */}
         <div className="mt-12 border-t pt-8">
           <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
-            <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} EventHub. All rights reserved.</p>
+            <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} KOI. All rights reserved.</p>
             <div className="flex space-x-6 text-sm">
               <Link href="/privacy" className="text-muted-foreground hover:text-foreground transition-colors">
                 Privacy Policy

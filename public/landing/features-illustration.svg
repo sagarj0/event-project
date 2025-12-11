@@ -1,0 +1,36 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Features Illustration -->
+  <defs>
+    <linearGradient id="featGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6366f1;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Central device/screen -->
+  <rect x="100" y="80" width="200" height="240" rx="20" fill="white" stroke="url(#featGrad)" stroke-width="3"/>
+  <rect x="100" y="80" width="200" height="40" rx="20" fill="url(#featGrad)"/>
+  <rect x="100" y="100" width="200" height="20" fill="url(#featGrad)"/>
+  
+  <!-- Feature icons around -->
+  <circle cx="50" cy="150" r="30" fill="#10b981" opacity="0.2"/>
+  <path d="M40 150 L47 157 L60 142" stroke="#10b981" stroke-width="3" fill="none"/>
+  
+  <circle cx="350" cy="150" r="30" fill="#f59e0b" opacity="0.2"/>
+  <rect x="340" y="140" width="20" height="20" rx="3" fill="none" stroke="#f59e0b" stroke-width="3"/>
+  <path d="M345 150 L355 150 M350 145 L350 155" stroke="#f59e0b" stroke-width="3"/>
+  
+  <circle cx="50" cy="280" r="30" fill="#ec4899" opacity="0.2"/>
+  <circle cx="50" cy="280" r="12" fill="none" stroke="#ec4899" stroke-width="3"/>
+  <path d="M50 268 L50 255 M50 255 L60 265" stroke="#ec4899" stroke-width="3" fill="none"/>
+  
+  <circle cx="350" cy="280" r="30" fill="#6366f1" opacity="0.2"/>
+  <rect x="340" y="270" width="8" height="15" fill="#6366f1"/>
+  <rect x="352" y="275" width="8" height="10" fill="#6366f1"/>
+  
+  <!-- Connection lines -->
+  <path d="M80 150 L100 150" stroke="#e5e7eb" stroke-width="2" stroke-dasharray="5,5"/>
+  <path d="M300 150 L320 150" stroke="#e5e7eb" stroke-width="2" stroke-dasharray="5,5"/>
+  <path d="M80 280 L100 280" stroke="#e5e7eb" stroke-width="2" stroke-dasharray="5,5"/>
+  <path d="M300 280 L320 280" stroke="#e5e7eb" stroke-width="2" stroke-dasharray="5,5"/>
+</svg>

@@ -1,13 +1,17 @@
-import Image from 'next/image';
+import { HeroSection } from '@/components/home-page/hero-section';
+import { AboutSection } from '@/components/home-page/about-section';
+import { WhyChooseKOISection } from '@/components/home-page/why-choose-koi-section';
+import { FeaturesSection } from '@/components/home-page/features-section';
+import { TestimonialsSection } from '@/components/home-page/testimonials-section';
 
 export default function Home() {
   return (
-    <div className="min-h-[80vh] flex flex-col space-y-6">
-      <div>
-        <h1>Welcome to KOI Event Tracker</h1>
-        <p>Track and manage your events seamlessly.</p>
-        <Image src="/long-logo.png" alt="KOI Logo" width={200} height={200} />
-      </div>
-    </div>
+    <>
+      <HeroSection />
+      <AboutSection />
+      <FeaturesSection />
+      <WhyChooseKOISection />
+      <TestimonialsSection />
+    </>
   );
 }
