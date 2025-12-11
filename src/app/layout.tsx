@@ -1,9 +1,7 @@
+import { ThemeProvider } from '@/components/theme-related/theme-provider';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-import { ThemeProvider } from '@/components/theme-related/theme-provider';
-import { Navbar } from '@/components/layout-related/navbar';
-import { Footer } from '@/components/layout-related/footer';
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
 
@@ -19,9 +17,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <Navbar />
-          <main className="flex flex-col items-stretch gap-4 overflow-y-auto">{children}</main>
-          <Footer />
+          {children}
         </ThemeProvider>
       </body>
     </html>
