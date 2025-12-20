@@ -9,6 +9,8 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { GoogleLoginButton } from '@/components/auth/google-login-button';
+import { useRouter } from 'next/navigation';
+import { ROUTES } from '@/lib/routes';
 
 export default function LoginForm() {
   const form = useForm<LoginFormData>({
@@ -20,8 +22,13 @@ export default function LoginForm() {
     },
   });
 
+  const router = useRouter();
+  const navigateToDashboard = () => router.push(ROUTES.DASHBOARD);
+
   const onSubmit = (data: LoginFormData) => {
-    console.log(data);
+    if (data.email === 'admin@exampl.com' && data.password === 'password') {
+      navigateToDashboard();
+    }
     // Handle login logic here
   };
 
@@ -99,12 +106,7 @@ export default function LoginForm() {
         <div className="flex-1 h-px bg-border" />
       </div>
 
-      <GoogleLoginButton
-        onSuccess={(response) => {
-          console.log('Login successful:', response);
-          // Handle the access_token - send to your backend or fetch user info
-        }}
-      />
+      <GoogleLoginButton onSuccess={navigateToDashboard} />
 
       <div className="flex items-center justify-center gap-1 text-sm">
         <span className="text-secondary leading-5">Don&apos;t have an account?</span>
