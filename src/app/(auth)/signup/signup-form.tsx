@@ -7,7 +7,7 @@ import { signupSchema, type SignupFormData } from '@/lib/schemas/auth';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { GoogleIcon } from '@/components/icons';
+import { GoogleLoginButton } from '@/components/auth/google-login-button';
 
 export default function SignupForm() {
   const form = useForm<SignupFormData>({
@@ -100,14 +100,12 @@ export default function SignupForm() {
         <div className="flex-1 h-px bg-border" />
       </div>
 
-      <Button
-        type="button"
-        variant="outline"
-        className="w-full  border border-border font-medium text-sm leading-5 px-4 py-2.5 rounded-lg flex items-center justify-center gap-3 h-auto"
-      >
-        <GoogleIcon />
-        Continue with Google
-      </Button>
+      <GoogleLoginButton
+        onSuccess={(response) => {
+          console.log('Signup successful:', response);
+          // Handle the access_token - send to your backend or fetch user info
+        }}
+      />
 
       <div className="flex items-center justify-center gap-1 text-sm">
         <span className="text-secondary leading-5">Already have an account?</span>

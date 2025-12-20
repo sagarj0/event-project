@@ -8,7 +8,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
-import { GoogleIcon } from '@/components/icons';
+import { GoogleLoginButton } from '@/components/auth/google-login-button';
 
 export default function LoginForm() {
   const form = useForm<LoginFormData>({
@@ -99,14 +99,12 @@ export default function LoginForm() {
         <div className="flex-1 h-px bg-border" />
       </div>
 
-      <Button
-        type="button"
-        variant="outline"
-        className="w-full  border border-border font-medium text-sm leading-5 px-4 py-2.5 rounded-lg flex items-center justify-center gap-3 h-auto"
-      >
-        <GoogleIcon />
-        Continue with Google
-      </Button>
+      <GoogleLoginButton
+        onSuccess={(response) => {
+          console.log('Login successful:', response);
+          // Handle the access_token - send to your backend or fetch user info
+        }}
+      />
 
       <div className="flex items-center justify-center gap-1 text-sm">
         <span className="text-secondary leading-5">Don&apos;t have an account?</span>
