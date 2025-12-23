@@ -13,11 +13,11 @@ export const signupSchema = z
     name: z.string().min(2, { message: 'Name must be at least 2 characters' }),
     email: z.string().email({ message: 'Please enter a valid email address' }),
     password: z.string().min(8, { message: 'Password must be at least 8 characters' }),
-    confirmPassword: z.string(),
+    re_password: z.string().min(8, { message: 'Please confirm your password' }),
   })
-  .refine((data) => data.password === data.confirmPassword, {
+  .refine((data) => data.password === data.re_password, {
     message: "Passwords don't match",
-    path: ['confirmPassword'],
+    path: ['re_password'],
   });
 
 export type SignupFormData = z.infer<typeof signupSchema>;

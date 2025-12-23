@@ -16,7 +16,7 @@ export default function SignupForm() {
       name: '',
       email: '',
       password: '',
-      confirmPassword: '',
+      re_password: '',
     },
   });
 
@@ -78,7 +78,7 @@ export default function SignupForm() {
 
           <FormField
             control={form.control}
-            name="confirmPassword"
+            name="re_password"
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="text-sm font-medium leading-5 text-secondary">Confirm Password</FormLabel>
