@@ -1,16 +1,17 @@
 'use client';
 
-import Link from 'next/link';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { loginSchema, type LoginFormData } from '@/lib/schemas/auth';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
+import { GoogleLoginButton } from '@/components/auth/google-login-button';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
-import { GoogleLoginButton } from '@/components/auth/google-login-button';
-import { useRouter } from 'next/navigation';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
 import { ROUTES } from '@/lib/routes';
+import { loginSchema, type LoginFormData } from '@/lib/schemas/auth';
+import { useCredsLogin } from '@/query/auth';
+import { zodResolver } from '@hookform/resolvers/zod';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useForm } from 'react-hook-form';
 
 export default function LoginForm() {
   const form = useForm<LoginFormData>({
@@ -24,13 +25,8 @@ export default function LoginForm() {
 
   const router = useRouter();
   const navigateToDashboard = () => router.push(ROUTES.DASHBOARD);
-
-  const onSubmit = (data: LoginFormData) => {
-    if (data.email === 'admin@exampl.com' && data.password === 'password') {
-      navigateToDashboard();
-    }
-    // Handle login logic here
-  };
+  const { mutate, isPending } = useCredsLogin();
+  const onSubmit = (data: LoginFormData) => mutate(data);
 
   return (
     <>
@@ -96,7 +92,9 @@ export default function LoginForm() {
             </Link>
           </div>
 
-          <Button type="submit">Login</Button>
+          <Button type="submit" disabled={isPending} loading={isPending}>
+            Login
+          </Button>
         </form>
       </Form>
 
